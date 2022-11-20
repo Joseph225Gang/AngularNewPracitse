@@ -8,11 +8,18 @@ import { AppHelloWorldDirective} from '../app-hello-world.directive';
 })
 export class FontSizeComponent implements OnInit {
 
+  num: number = 5;
+  
   constructor(@Attribute('color')private color:string) { 
     alert(color);
   }
 
   ngOnInit() {
+  }
+
+  onClick(){
+    alert('fontSize');
+    this.num = 10;
   }
 
 }

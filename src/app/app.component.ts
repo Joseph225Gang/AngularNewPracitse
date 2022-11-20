@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild, ContentChild, ElementRef  } from '@angular/core';
+import { FontSizeComponent} from './font-size/font-size.component';
 import { observable, Observable, Subject } from 'rxjs';
 
 @Component({
@@ -6,13 +7,20 @@ import { observable, Observable, Subject } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  @ViewChild(FontSizeComponent, {static: true}) fontControl: FontSizeComponent;
+  num: number = 0;
   title = 'angularNewTest';
   observableData1 = '';
   observableData2 = '';
   subjectData1 = '';
   subjectData2 = '';
 
+  ngOnInit(): void {
+    this.fontControl.onClick();
+    console.log(this.fontControl.num);
+  }
+  
   getObservableData(){
     let myObservable = new Observable<any>(observable => {
       observable.next(Math.floor(Math.random() * 99) + 1);
