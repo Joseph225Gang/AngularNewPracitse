@@ -1,9 +1,12 @@
-import { Component, OnInit, ViewChild, ContentChild, ElementRef  } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { FontSizeComponent} from './font-size/font-size.component';
-import { observable, Observable, Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { NumberService} from '../service/number.service';
+import {NumServiceProvider} from '../service/number.service.provider';
 
 @Component({
   selector: 'app-root',
+  providers: [NumServiceProvider],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -15,6 +18,11 @@ export class AppComponent implements OnInit{
   observableData2 = '';
   subjectData1 = '';
   subjectData2 = '';
+
+  constructor(private numService: NumberService)
+  {
+    console.log(this.numService.getNum());
+  }
 
   ngOnInit(): void {
     this.fontControl.onClick();
