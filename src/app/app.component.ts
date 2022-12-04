@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, Optional, ViewChild} from '@angular/core';
 import { FontSizeComponent} from './font-size/font-size.component';
 import { Observable, Subject } from 'rxjs';
 import { NumberService} from '../service/number.service';
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
   subjectData1 = '';
   subjectData2 = '';
 
-  constructor(private numService: NumberService)
+  constructor(@Optional() private numService: NumberService)
   {
     console.log(this.numService.getNum());
   }

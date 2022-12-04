@@ -1,5 +1,5 @@
 import { Component, OnInit, Attribute } from '@angular/core';
-import { AppHelloWorldDirective} from '../app-hello-world.directive';
+import { AppHelloWorldDirective} from '../custom-button.directive';
 
 @Component({
   selector: 'app-font-size',
