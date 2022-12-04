@@ -7,6 +7,8 @@ import { FontSizeComponent } from './font-size/font-size.component';
 import { AppHelloWorldDirective } from './custom-button.directive';
 import { ContentChildComponent } from './content-child/content-child.component';
 import { HighlightDirective } from './highlight.directive';
+import { DataService } from './data.service';
+import { newData } from './newData';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { HighlightDirective } from './highlight.directive';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{
+    provide: DataService,
+    useValue: newData
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

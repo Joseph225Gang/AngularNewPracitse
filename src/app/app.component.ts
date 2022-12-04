@@ -3,6 +3,7 @@ import { FontSizeComponent} from './font-size/font-size.component';
 import { Observable, Subject } from 'rxjs';
 import { NumberService} from '../service/number.service';
 import {NumServiceProvider} from '../service/number.service.provider';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -19,9 +20,10 @@ export class AppComponent implements OnInit{
   subjectData1 = '';
   subjectData2 = '';
 
-  constructor(@Optional() private numService: NumberService)
+  constructor(@Optional() private numService: NumberService, private dataService: DataService)
   {
     console.log(this.numService.getNum());
+    console.log(this.dataService.getData());
   }
 
   ngOnInit(): void {
