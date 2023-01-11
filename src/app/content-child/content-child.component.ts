@@ -7,7 +7,7 @@ import { Component, OnInit, ContentChild, ElementRef  } from '@angular/core';
 })
 export class ContentChildComponent implements OnInit {
 
-  @ContentChild('lastHead', {static: false}) lastHead : ElementRef;
+  @ContentChild('lastHead') lastHead : ElementRef;
   constructor() { }
 
   ngOnInit() {
