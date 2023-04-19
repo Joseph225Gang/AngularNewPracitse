@@ -16,3 +16,10 @@
 </button>
 
 <p appHighlight>Highlight me!</p>
+
+<ul>
+    <li><a [routerLink]="['/standalone']">Standalone</a></li>
+    <li><a [routerLink]="['/jsonSm']" routerLinkActive="active" [queryParams]="{ jsonIndex : 5}">jsonSm</a></li>
+  </ul>
+  
+  <router-outlet></router-outlet>

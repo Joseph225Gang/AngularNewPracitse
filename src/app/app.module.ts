@@ -9,6 +9,7 @@ import { ContentChildComponent } from './content-child/content-child.component';
 import { HighlightDirective } from './highlight.directive';
 import { DataService } from './data.service';
 import { newData } from './newData';
+import { JsonSmComponent } from './json-sm/json-sm.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { newData } from './newData';
     FontSizeComponent,
     AppHelloWorldDirective,
     ContentChildComponent,
-    HighlightDirective
+    HighlightDirective,
+    JsonSmComponent
   ],
   imports: [
     BrowserModule,
